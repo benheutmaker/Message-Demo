@@ -11,9 +11,26 @@ import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
 
+    let you = Person(username: "You", profilePicture: UIImage(named: "you")!)
+    
+    var dateFormatter: NSDateFormatter?
+    
+    func formatDate(date: NSDate) -> String {
+        if dateFormatter == nil {
+            dateFormatter = NSDateFormatter()
+            dateFormatter?.dateStyle = NSDateFormatterStyle.ShortStyle
+            dateFormatter?.timeStyle = NSDateFormatterStyle.ShortStyle
+        }
+        
+        return dateFormatter!.stringFromDate(date)
+    }
+    
+    class func appDelegate() -> AppDelegate {
+        return UIApplication.sharedApplication().delegate as! AppDelegate
+    }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
