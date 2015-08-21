@@ -13,5 +13,6 @@ class ThemMessageCell: UICollectionViewCell {
     @IBOutlet var profilePictureView: UIImageView!
     @IBOutlet var textLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var messageView: UIView!
     
 }

@@ -29,13 +29,16 @@ class MasterViewController: UIViewController, UITableViewDataSource, UITableView
         
         threads.append(MessageThread(
             messages: [ Message(text: "What's up?", timeStamp: NSDate(), sender: you, reciever: them),
-                        Message(text: "Nothin much", timeStamp: NSDate(), sender: them, reciever: you) ],
+                        Message(text: "Nothin much", timeStamp: NSDate(), sender: them, reciever: you),
+                        Message(text: "That's cool", timeStamp: NSDate(), sender: you, reciever: them),
+                        Message(text: "Yeah", timeStamp: NSDate(), sender: them, reciever: you) ],
             you: you, them: them))
         
         threads.append(MessageThread(
             messages: [ Message(text: "How're you?", timeStamp: NSDate(), sender: you, reciever: theOtherThem),
                         Message(text: "I'm good thanks", timeStamp: NSDate(), sender: theOtherThem, reciever: you),
-                        Message(text: "Just got home", timeStamp: NSDate(), sender: theOtherThem, reciever: you) ],
+                        Message(text: "Just got home", timeStamp: NSDate(), sender: theOtherThem, reciever: you),
+                        Message(text: "Good I'm glad :)", timeStamp: NSDate(), sender: you, reciever: theOtherThem) ], 
             you: you, them: theOtherThem))
     }
     

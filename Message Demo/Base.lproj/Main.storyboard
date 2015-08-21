@@ -235,6 +235,7 @@
                                         </variation>
                                         <connections>
                                             <outlet property="dateLabel" destination="DbQ-z4-cjg" id="4o0-E7-mds"/>
+                                            <outlet property="messageView" destination="iAE-uG-fgB" id="Fig-VG-WUO"/>
                                             <outlet property="profilePictureView" destination="xsF-3U-WAf" id="cl6-6e-WgB"/>
                                             <outlet property="textLabel" destination="JuM-ol-QeN" id="ZeP-OU-Z8T"/>
                                         </connections>
@@ -326,6 +327,7 @@
                                         </variation>
                                         <connections>
                                             <outlet property="dateLabel" destination="0he-u7-Skv" id="rJc-SB-pCv"/>
+                                            <outlet property="messageView" destination="avi-t0-i99" id="3bC-TA-tV8"/>
                                             <outlet property="profilePictureView" destination="dfK-0f-WK0" id="f9J-GP-e3k"/>
                                             <outlet property="textLabel" destination="mil-nP-1M9" id="mWN-aN-euB"/>
                                         </connections>

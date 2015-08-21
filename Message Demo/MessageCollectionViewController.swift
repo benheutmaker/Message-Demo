@@ -13,7 +13,6 @@ class MessageCollectionViewController: UIViewController, UICollectionViewDataSou
     @IBOutlet var collectionView: UICollectionView!
     
     let you = AppDelegate.appDelegate().you
-    
     var thread: MessageThread!
     
     override func viewDidLoad() {
@@ -26,9 +25,11 @@ class MessageCollectionViewController: UIViewController, UICollectionViewDataSou
         navigationItem.rightBarButtonItem = themProfileButton
     }
     
+    
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return thread.messages.count
     }
+    
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let message = thread.messages[indexPath.row]
@@ -36,7 +37,11 @@ class MessageCollectionViewController: UIViewController, UICollectionViewDataSou
         if message.sender == you {
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("YouMessageCell", forIndexPath: indexPath) as! YouMessageCell
             
+            cell.messageView.layer.cornerRadius = 5
+            
             cell.profilePictureView.image = you.profilePicture
+            cell.profilePictureView.layer.cornerRadius = 5
+            
             cell.textLabel.text = message.text
             cell.dateLabel.text = AppDelegate.appDelegate().formatDate(message.timeStamp)
             
@@ -45,13 +50,18 @@ class MessageCollectionViewController: UIViewController, UICollectionViewDataSou
         } else {
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ThemMessageCell", forIndexPath: indexPath) as! ThemMessageCell
             
+            cell.messageView.layer.cornerRadius = 5
+            
             cell.profilePictureView.image = message.sender.profilePicture
+            cell.profilePictureView.layer.cornerRadius = 5
+            
             cell.textLabel.text = message.text
             cell.dateLabel.text = AppDelegate.appDelegate().formatDate(message.timeStamp)
             
             return cell
         }
     }
+    
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
 
